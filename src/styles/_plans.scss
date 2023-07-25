@@ -1,0 +1,41 @@
+.plans{
+    padding: 5.6vw;
+
+    h2 {
+        text-align: center;
+    }
+
+    &__list {
+        display: flex; 
+        justify-content: space-around; //Para distribuir as marges de forma padrão entre os elementos 
+        margin-top: 50px;
+
+
+        &__item{
+            text-align: center;
+            padding: 60px 44px 44px;
+            max-width: 380px;
+            width: 100%;
+
+            &:nth-child(2) { //Puxa o segundo item da lista
+                background-image: url(../Images/fundo_combo_plus.png);
+                background-repeat: no-repeat;
+                background-size: contain; //imagem ocupando toda a altura e largura do li
+            } 
+
+
+            img {
+                height: 83px;
+            }
+
+            strong {
+                display: block;
+                margin-top: 24px;
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}
