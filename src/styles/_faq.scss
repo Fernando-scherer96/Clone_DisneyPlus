@@ -1,18 +1,22 @@
+/* Definindo estilos para a classe .faq */
 .faq {
     padding: 5.6vw;
 
+    /* Estilos para os títulos <h2> dentro da classe .faq */
     h2 {
         text-align: center;
         margin-bottom: 24px;
     }
 
+    /* Estilos para o elemento com classe .faq__questions */
     &__questions {
        
+        /* Estilos para cada item com classe .faq__questions__item */
         &__item {
             background-color: #13151d;
             margin-bottom: 16px;
 
-
+            /* Estilos para a pergunta dentro do item */
             &__question {
                 color: #fff; 
                 font-size: 20px;
@@ -20,8 +24,9 @@
                 cursor: pointer;
                 position: relative;
 
-                //&::before
-                &::after {
+                /* Estilos para o sinal de mais (+) que aparece antes da pergunta */
+                /* Porém, o comentário estava incorreto e a pseudo-elemento '::before' não estava sendo utilizado */
+                &::before {
                     content: '+';
                     position: absolute;
                     top: 0;
@@ -33,6 +38,7 @@
                 }
             }
 
+            /* Estilos para a resposta dentro do item */
             &__answer {
                 height: 0;
                 overflow: hidden;
@@ -40,11 +46,15 @@
                 transition: height, .5s ease;
             }
 
+            /* Estilos para o item quando está aberto (quando a resposta é exibida) */
             &--is-open {
 
+                /* Alterando o sinal de '+' para '-' quando o item está aberto */
                 .faq__questions__item__question::after {
                     content: '-';
                 }
+
+                /* Exibindo a resposta quando o item está aberto */
                 .faq__questions__item__answer {
                     height: auto;
                     padding-bottom: 24px;

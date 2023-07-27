@@ -16,16 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
             botao.target.classList.add('shows__tabs__button--is-active'); // Adiciona a classe 'shows__tabs__button--is-active' ao botão clicado para marcá-lo como ativo.
         });
     }
-
+// Obtém todos os elementos HTML com a classe 'questions' e armazena-os na variável 'questions'
     for (let i=0; i< questions.length; i++) {
+    // Para cada elemento 'questions', adiciona um ouvinte de eventos de clique
+    // Quando um elemento 'questions' for clicado, a função 'abreOuFechaResposta' será chamada
         questions[i].addEventListener('click', abreOuFechaResposta);
     }
 });
 
+// Definição da função chamada quando um elemento 'questions' é clicado
 function abreOuFechaResposta (elemento){
+     // Define o nome da classe CSS que será adicionada ou removida
     const classe = 'faq__questions__item--is-open';
+    // Obtém o elemento pai do elemento clicado (o elemento com a classe 'questions')
     const elementoPai = elemento.target.parentNode;
-
+    // Alterna a presença da classe no elemento pai (abre ou fecha a resposta)
     elementoPai.classList.toggle(classe);
 }
 
