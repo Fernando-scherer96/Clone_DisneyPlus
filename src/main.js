@@ -3,6 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('[data-tab-button]'); // Seleciona todos os elementos com o atributo 'data-tab-button' usando o seletor '[data-tab-button]'.
     const questions = document.querySelectorAll('[data-faq-question]');
 
+    const heroSection = document.querySelector('.hero');
+    const alturaHero = heroSection.clientHeight; //para pegar a altura do elemento. 
+
+    window.addEventListener('scroll', function()
+    {
+        const positionAual = window.scrollY; //o valor não é modificado o que acontece é que a função é acionada toda vez que rolamos a pagina
+        if (positionAual < alturaHero) {
+            ocultaElementosdoHeader();
+        } else {
+            exibeElementosdoHeader();
+        }
+    })
+
 
     // Itera sobre todos os botões obtidos anteriormente.
     for (let i = 0; i < buttons.length; i++) {
@@ -23,6 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
         questions[i].addEventListener('click', abreOuFechaResposta);
     }
 });
+
+function ocultaElementosdoHeader(){
+    const header = document.querySelector('header');
+    header.classList.add('header--is-hidden');
+}
+
+function exibeElementosdoHeader(){
+    const header = document.querySelector('header');
+    header.classList.remove('header--is-hidden');
+}
 
 // Definição da função chamada quando um elemento 'questions' é clicado
 function abreOuFechaResposta (elemento){

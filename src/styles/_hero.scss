@@ -6,6 +6,11 @@
     text-align: center; // centralizando os elementos 
     background-size: cover; // vai pegar a imagem de fundo e preencher todo o container 
 
+    .button {
+        margin-top: 2px;
+        margin-bottom: 8px;
+    }
+
     &__content {
         max-width: 640px; // largura maxima de 640px
 
