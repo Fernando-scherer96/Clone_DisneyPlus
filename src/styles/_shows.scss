@@ -10,6 +10,10 @@
         grid-template-columns: 1fr 1fr 1fr; //3 colunas em 1 linha
         gap: 24px;
 
+        @media (max-width:768px){
+            grid-template-columns: 1fr 1fr; //3 colunas em 1 linha
+        }
+
         &--is-active {
             display: grid; 
         }
@@ -26,6 +30,12 @@
         display: flex;
         justify-content: center;
 
+        @media (max-width:768px){
+            white-space: nowrap; //faz com que os textos fiquem em uma linha só mesmo que não caiba no container, forçamos
+            overflow-x: scroll; 
+            padding-left: 20px; // para todo o primeiro elemento aparecer na rolagem
+        }
+
         &__button{
             color: variaveis.$CorTextoSecundario;
             font-size: 20px;
@@ -37,8 +47,13 @@
             cursor: pointer;
             border-bottom: 5px solid transparent;
 
+
             &--is-active {
                 border-color: variaveis.$CorTextoSecundario;
+            }
+
+            @media (max-width:768px){
+                font-size: 16px;
             }
         }
     }
